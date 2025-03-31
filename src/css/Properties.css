@@ -1,0 +1,182 @@
+/* Container styling */
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Page title */
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  /* Filters section */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 220px;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+  
+  .filters input:focus,
+  .filters select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Grid layout for properties */
+  .property-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 10px;
+  }
+  
+  /* Individual property card */
+  .property-card {
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .property-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image styling */
+  .property-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-bottom: 3px solid #007bff;
+  }
+  
+  /* Property content */
+  .property-content {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .property-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 8px;
+  }
+  
+  .property-content p {
+    font-size: 1rem;
+    color: #666;
+    margin: 4px 0;
+  }
+  
+  /* Price styling */
+  .property-content .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 8px 0;
+  }
+  
+  /* View details button */
+  .property-content a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: #007bff;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .property-content a:hover {
+    background: #0056b3;
+  }
+  
+  .property-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .properties-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .property-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .property-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .property-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .property-details {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .property-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .property-price {
+    color: #f1c40f;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .property-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .property-link {
+    display: inline-block;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+    

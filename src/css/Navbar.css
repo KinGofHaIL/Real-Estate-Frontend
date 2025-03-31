@@ -1,0 +1,147 @@
+/* Navbar Container */
+.navbar {
+    background-color: #1a1f36; /* Dark Blue */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    padding: 8px 12px;
+  }
+  
+  .nav-link:hover {
+    color: #f4b400; /* Highlight on hover */
+  }
+  
+  /* Buttons Section */
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Login & Signup Buttons */
+  .login-button, .signup-button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .login-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .signup-button {
+    background-color: #f4b400;
+    border: none;
+    color: #1a1f36;
+  }
+  
+  .signup-button:hover {
+    background-color: #e2a100;
+  }
+  
+  /* Profile Section */
+  .profile-menu {
+    position: relative;
+  }
+  
+  .profile-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    object-fit: cover;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    min-width: 140px;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .dropdown button {
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .dropdown button:hover {
+    background-color: #f4f4f4;
+  }
+  
+  /* Adjust Content for Fixed Navbar */
+  body {
+    padding-top: 65px; /* Prevents content from being cropped under navbar */
+  }
+  
+  /* Mobile Responsive Design */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Hide navigation links */
+    }
+  
+    .nav-buttons {
+      gap: 10px;
+    }
+  
+    .navbar {
+      padding: 10px 15px;
+    }
+  
+    .profile-icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
