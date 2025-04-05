@@ -10,9 +10,8 @@ import PropertyDetails from "./components/PropertyDetails";
 import Agents from "./components/Agents";
 import "./styles.css";
 import Dashboard from "./users/Dashboard";
-import UserProfile from "./users/UserProfile";  // Import User Profile
+import UserProfile from "./users/UserProfile"; 
 import { AuthProvider } from "./AuthContext.jsx";
-
 
 const App = () => {
   const [properties, setProperties] = useState([]);
@@ -27,7 +26,14 @@ const App = () => {
       .get("http://localhost:8000/api/properties/get_properties")
       .then((response) => {
         console.log("Fetched Properties:", response.data);
-        setProperties(response.data);
+        
+        // Ensure each property has a unique image
+        const updatedProperties = response.data.map((property, index) => ({
+          ...property,
+          image: `/images/image${index + 1}.png` // Adjust image naming dynamically
+        }));
+
+        setProperties(updatedProperties);
         setLoading(false);
       })
       .catch((error) => {
@@ -39,7 +45,7 @@ const App = () => {
   // Fetch Agents
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/agents/agents") // Ensure API is correct
+      .get("http://localhost:8000/api/agents/agents")
       .then((response) => {
         console.log("Fetched Agents:", response.data);
         setAgents(response.data);
@@ -60,24 +66,32 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<UserProfile />} />  {/* Add Profile Route */}
+          <Route path="/profile" element={<UserProfile />} />
 
-          {/* Show loading while fetching properties */}
+          {/* Properties Page */}
           <Route 
             path="/properties" 
-            element={loading ? <p className="text-center mt-10">Loading properties...</p> : <Properties properties={properties} search={search} setSearch={setSearch} />} 
+            element={
+              loading ? 
+                <p className="text-center mt-10">Loading properties...</p> 
+                : <Properties properties={properties} search={search} setSearch={setSearch} />
+            } 
           />
 
-          {/* PropertyDetails fetches its own data */}
+          {/* Property Details */}
           <Route path="/property/:id" element={<PropertyDetails />} />
 
           {/* Agents Page */}
           <Route 
             path="/agents" 
-            element={loadingAgents ? <p className="text-center mt-10">Loading agents...</p> : <Agents agents={agents} />} 
+            element={
+              loadingAgents ? 
+                <p className="text-center mt-10">Loading agents...</p> 
+                : <Agents agents={agents} />
+            } 
           />
 
-          {/* Homepage Route */}
+          {/* Homepage */}
           <Route
             path="/"
             element={

@@ -9,7 +9,6 @@ const Properties = ({ properties = [], search, setSearch }) => {
     console.log("Search Term:", search);
   }, [properties, search]);
 
-  // Ensure search filter works correctly
   const filteredProperties = properties.filter(
     (property) =>
       property.title?.toLowerCase().includes(search.toLowerCase()) ||
@@ -37,7 +36,6 @@ const Properties = ({ properties = [], search, setSearch }) => {
       <div className="property-grid">
         {filteredProperties.length > 0 ? (
           filteredProperties.map((property) => {
-            // Ensure property ID is available (_id is commonly used in MongoDB)
             const propertyId = property.propertyId || property._id;
             if (!propertyId) {
               console.warn("Property missing ID:", property);
@@ -46,6 +44,13 @@ const Properties = ({ properties = [], search, setSearch }) => {
 
             return (
               <div key={propertyId} className="property-card">
+                {/* Set the property image here */}
+                <img
+                  src={property.image || "/image.png"}  // Use the local image
+                  alt={property.title || "Property Image"}
+                  className="property-image"
+                />
+
                 <div className="property-info">
                   <h2 className="property-title">{property.title || "No Title"}</h2>
                   <p className="property-location">📍 {property.address || "No Address"}</p>

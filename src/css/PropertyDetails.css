@@ -1,57 +1,68 @@
+/* PropertyDetails.css */
+
+.property-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
 .property-details {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .property-details h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  .property-details p {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #333;
-  }
-  
-  .property-details strong {
-    font-weight: bold;
-  }
-  
-  .property-details-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f7f7f7;
-  }
-  
-  .property-card {
-    padding: 20px;
-  }
-  
-  .call-now-btn {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .call-now-btn:hover {
-    background-color: #0056b3;
-  }
-    
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.property-image {
+  width: 100%; /* Make it responsive */
+  max-height: 250px; /* Set a max height to avoid stretching */
+  object-fit: cover; /* Ensure it covers without distortion */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.property-details h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.property-details p {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.property-details p strong {
+  font-weight: 600;
+}
+
+.call-now-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.call-now-btn:hover {
+  background-color: #003d82;
+}
+
+.call-now-btn::before {
+  /* content: "📞 "; */
+  margin-right: 5px;
+}
